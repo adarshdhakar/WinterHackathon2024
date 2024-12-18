@@ -319,11 +319,11 @@ backend/
 │   └── errorMiddleware.js     # Global error handling
 │
 ├── models/                    # Mongoose models (MongoDB schema definitions)
-│   ├── User.js                # User model (for students/teachers)
-│   ├── Lecture.js             # Lecture series model
-│   ├── Resource.js            # Resource model
-│   ├── Progress.js            # Progress tracking model
-│   └── Payment.js             # Payment-related model
+│   ├── userModel.js                # User model (for students/teachers)
+│   ├── lectureModel.js             # Lecture series model
+│   ├── resourceModel.js            # Resource model
+│   ├── progressModel.js            # Progress tracking model
+│   └── paymentModel.js             # Payment-related model
 │
 ├── routes/                    # Express route definitions
 │   ├── authRoutes.js          # Routes for authentication
