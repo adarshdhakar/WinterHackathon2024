@@ -6,17 +6,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <section className="py-16 bg-gray-200">
-        <div className="container mx-auto text-center px-6">
-      <div className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white">
-            <span className="typewriter typewriter-repeating">
-              Empowering Minds, Shaping Futures
-            </span>
-          </div>
-          
-      </div>
-      </section>
-      <main className="py-20 bg-gradient-to-r from-purple-600 to-pink-500 text-white">
+      <main className="bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-700 text-white py-20">
         <div className="container mx-auto text-center px-4">
           <h2 className="text-4xl font-bold mb-4">
             Welcome to{' '}
@@ -44,10 +34,17 @@ const Home = () => {
         </div>
       </main>
 
-      <section className="py-16 bg-gray-200">
+      <section className="py-16 bg-gradient-to-r from-teal-500 to-cyan-600">
         <div className="container mx-auto text-center px-6">
-        
-          <h3 className="text-3xl font-bold mb-8">Features</h3>
+          <div className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white">
+            <span className="typewriter typewriter-repeating">
+              Empowering Minds, Shaping Futures
+            </span>
+            <br />
+            <br />
+          </div>
+
+          <h3 className="text-3xl font-bold mb-8 text-white">Features</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 shadow-lg rounded-lg">
               <h4 className="text-2xl font-semibold mb-4">Interactive Courses</h4>
@@ -91,7 +88,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-r from-teal-500 to-cyan-600">
+      <section className="py-16 bg-gradient-to-r from-indigo-600 to-blue-500 text-white">
         <div className="container mx-auto text-center px-6">
           <h3 className="text-3xl font-bold mb-6">Why Choose EduPoint?</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -127,7 +124,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-200">
+      <section className="py-16 bg-gradient-to-r from-purple-600 to-pink-500 text-white">
         <div className="container mx-auto text-center px-6">
           <h3 className="text-3xl font-bold mb-6">Testimonials</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
