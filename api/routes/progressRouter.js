@@ -1,5 +1,5 @@
-const express = require('express');
-const progressController = require('../controllers/progressController');
+import express from 'express';
+import * as progressController from '../controllers/progressController.js';
 
 const router = express.Router();
 
@@ -14,4 +14,4 @@ router
   .patch(progressController.updateProgress)
   .delete(progressController.deleteProgress);
 
-module.exports = router;
+export default router;

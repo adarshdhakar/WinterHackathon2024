@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const lectureSchema = new mongoose.Schema({
-  name : {
+  name: {
     type: String,
     required: [true, 'lecture must have a name!']
   },
@@ -14,12 +14,12 @@ const lectureSchema = new mongoose.Schema({
     type: Date,
     default: Date.now()
   },
-  resource :{
-    type : mongoose.Schema.ObjectId,
-    required : [true,'lecture must have resources!']
+  resource: {
+    type: mongoose.Schema.ObjectId,
+    required: [true, 'lecture must have resources!']
   }
 });
 
 const Lecture = mongoose.model('Lecture', lectureSchema);
 
-module.exports = Lecture;
+export default Lecture;

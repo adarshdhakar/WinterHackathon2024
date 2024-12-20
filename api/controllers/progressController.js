@@ -1,7 +1,7 @@
-const Progress = require('./../models/progressModel');
-const APIFeatures = require('./../utils/apiFeatures');
-const catchAsync = require('./../utils/catchAsync');
-const AppError = require('./../utils/appError');
+import Progress from './../models/progressModel.js';
+import APIFeatures from './../utils/apiFeatures.js';
+import catchAsync from './../utils/catchAsync.js';
+import AppError from './../utils/appError.js';
 
 exports.getAllProgresss = catchAsync(async (req, res, next) => {
   const features = new APIFeatures(Progress.find(), req.query)

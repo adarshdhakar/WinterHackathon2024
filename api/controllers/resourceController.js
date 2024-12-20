@@ -1,7 +1,7 @@
-const Resource = require('./../models/resourceModel');
-const APIFeatures = require('./../utils/apiFeatures');
-const catchAsync = require('./../utils/catchAsync');
-const AppError = require('./../utils/appError');
+import Progress from './../models/progressModel.js';
+import APIFeatures from './../utils/apiFeatures.js';
+import catchAsync from './../utils/catchAsync.js';
+import AppError from './../utils/appError.js';
 
 exports.getAllResources = catchAsync(async (req, res, next) => {
   const features = new APIFeatures(Resource.find(), req.query)

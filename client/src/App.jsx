@@ -11,8 +11,14 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 
 import Header from './components/Header'; // Import Header component
+import Footer from './components/Footer'; // Import Header component
+
 import { Provider } from 'react-redux';
 import { store } from './redux/store'; // Your store file
 import LectureSeries from './pages/LectureSeries';
@@ -29,9 +35,14 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/lecture-series" element={<LectureSeries />} />
-
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
+        
         {/* Add other routes here as needed */}
       </Routes>
+      <Footer />
     </Router>
     </Provider>
   );

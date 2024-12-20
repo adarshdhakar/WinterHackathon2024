@@ -1,5 +1,5 @@
-const express = require('express');
-const resourceController = require('../controllers/resourceController');
+import express from 'express';
+import * as resourceController from '../controllers/resourceController.js';
 
 const router = express.Router();
 
@@ -14,4 +14,4 @@ router
   .patch(resourceController.updateResource)
   .delete(resourceController.deleteResource);
 
-module.exports = router;
+export default router;

@@ -1,9 +1,9 @@
-const Lecture = require('./../models/lectureModel');
-const APIFeatures = require('./../utils/apiFeatures');
-const catchAsync = require('./../utils/catchAsync');
-const AppError = require('./../utils/appError');
+import Lecture from './../models/lectureModel.js';
+import APIFeatures from './../utils/apiFeatures.js';
+import catchAsync from './../utils/catchAsync.js';
+import AppError from './../utils/appError.js';
 
-exports.getAllLectures = catchAsync(async (req, res, next) => {
+export const getAllLectures = catchAsync(async (req, res, next) => {
   const features = new APIFeatures(Lecture.find(), req.query)
     .filter()
     .sort()
@@ -21,7 +21,7 @@ exports.getAllLectures = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getLecture = catchAsync(async (req, res, next) => {
+export const getLecture = catchAsync(async (req, res, next) => {
   const lecture = await Lecture.findById(req.params.id);
 
   if (!lecture) {
@@ -36,7 +36,7 @@ exports.getLecture = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.createLecture = catchAsync(async (req, res, next) => {
+export const createLecture = catchAsync(async (req, res, next) => {
   const newLecture = await Lecture.create(req.body);
 
   res.status(201).json({
@@ -47,7 +47,7 @@ exports.createLecture = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.updateLecture = catchAsync(async (req, res, next) => {
+export const updateLecture = catchAsync(async (req, res, next) => {
   const lecture = await Lecture.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true
@@ -65,7 +65,7 @@ exports.updateLecture = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.deleteLecture = catchAsync(async (req, res, next) => {
+export const deleteLecture = catchAsync(async (req, res, next) => {
   const lecture = await Lecture.findByIdAndDelete(req.params.id);
 
   if (!lecture) {

@@ -1,6 +1,6 @@
-const express = require('express');
-const lectureController = require('../controllers/lectureController');
-const authController = require('../controllers/authController');
+import express from 'express';
+import * as lectureController from '../controllers/lectureController.js';
+import * as authController from '../controllers/authController.js';
 
 const router = express.Router();
 
@@ -19,4 +19,4 @@ router
     lectureController.deleteLecture
   );
 
-module.exports = router;
+export default router;

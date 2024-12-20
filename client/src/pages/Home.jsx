@@ -5,7 +5,8 @@ import Footer from '../components/Footer';
 const Home = () => {
   return (
     <div>
-      <Header />
+      <br/>
+      <br/>
       <section className="py-16 bg-gray-200">
         <div className="container mx-auto text-center px-6">
       <div className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white">
@@ -155,8 +156,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
