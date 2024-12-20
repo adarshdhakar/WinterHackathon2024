@@ -1,6 +1,8 @@
-import dotenv from './../.env';
+import dotenv from 'dotenv';
+
+// Load the .env file
 if (process.env.NODE_ENV !== 'production') {
-    dotenv.config();
+    dotenv.config({ path: './../.env' }); // Explicitly specify the path if the .env file is not in the root directory
 }
 
 import express from 'express';
@@ -16,10 +18,10 @@ import resourceRoute from './routes/resourceRouter.js';
 import progressRoute from './routes/progressRouter.js';
 // import paymentRoute from './routes/paymentRouter.js';
 
-console.log(process.env.NODE_ENV);
-console.log(process.env.PORT);
-console.log(process.env.ATLASDB_URL);
-console.log(process.env.SECRET);
+// console.log(process.env.NODE_ENV);
+// console.log(process.env.PORT);
+// console.log(process.env.ATLASDB_URL);
+// console.log(process.env.SECRET);
 
 const dbUrl = process.env.ATLASDB_URL;
 const port = process.env.PORT || 4173; // Default port 4173 if not specified in .env
