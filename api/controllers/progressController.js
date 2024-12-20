@@ -3,7 +3,7 @@ import APIFeatures from './../utils/apiFeatures.js';
 import catchAsync from './../utils/catchAsync.js';
 import AppError from './../utils/appError.js';
 
-exports.getAllProgresss = catchAsync(async (req, res, next) => {
+export const getAllProgresss = catchAsync(async (req, res, next) => {
   const features = new APIFeatures(Progress.find(), req.query)
     .filter()
     .sort()
@@ -11,17 +11,16 @@ exports.getAllProgresss = catchAsync(async (req, res, next) => {
     .paginate();
   const progresss = await features.query;
 
-  // SEND RESPONSE
   res.status(200).json({
     status: 'success',
     results: progresss.length,
     data: {
-      progresss
-    }
+      progresss,
+    },
   });
 });
 
-exports.getProgress = catchAsync(async (req, res, next) => {
+export const getProgress = catchAsync(async (req, res, next) => {
   const progress = await Progress.findById(req.params.id);
 
   if (!progress) {
@@ -31,26 +30,26 @@ exports.getProgress = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     data: {
-      progress
-    }
+      progress,
+    },
   });
 });
 
-exports.createProgress = catchAsync(async (req, res, next) => {
+export const createProgress = catchAsync(async (req, res, next) => {
   const newProgress = await Progress.create(req.body);
 
   res.status(201).json({
     status: 'success',
     data: {
-      tour: newProgress
-    }
+      progress: newProgress,
+    },
   });
 });
 
-exports.updateProgress = catchAsync(async (req, res, next) => {
+export const updateProgress = catchAsync(async (req, res, next) => {
   const progress = await Progress.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   if (!progress) {
@@ -60,12 +59,12 @@ exports.updateProgress = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     data: {
-      progress
-    }
+      progress,
+    },
   });
 });
 
-exports.deleteProgress = catchAsync(async (req, res, next) => {
+export const deleteProgress = catchAsync(async (req, res, next) => {
   const progress = await Progress.findByIdAndDelete(req.params.id);
 
   if (!progress) {
@@ -74,6 +73,6 @@ exports.deleteProgress = catchAsync(async (req, res, next) => {
 
   res.status(204).json({
     status: 'success',
-    data: null
+    data: null,
   });
 });

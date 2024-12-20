@@ -3,7 +3,7 @@ import APIFeatures from './../utils/apiFeatures.js';
 import catchAsync from './../utils/catchAsync.js';
 import AppError from './../utils/appError.js';
 
-exports.getAllResources = catchAsync(async (req, res, next) => {
+export const getAllResources = catchAsync(async (req, res, next) => {
   const features = new APIFeatures(Resource.find(), req.query)
     .filter()
     .sort()
@@ -11,17 +11,16 @@ exports.getAllResources = catchAsync(async (req, res, next) => {
     .paginate();
   const resources = await features.query;
 
-  // SEND RESPONSE
   res.status(200).json({
     status: 'success',
     results: resources.length,
     data: {
-      resources
-    }
+      resources,
+    },
   });
 });
 
-exports.getResource = catchAsync(async (req, res, next) => {
+export const getResource = catchAsync(async (req, res, next) => {
   const resource = await Resource.findById(req.params.id);
 
   if (!resource) {
@@ -31,26 +30,26 @@ exports.getResource = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     data: {
-      resource
-    }
+      resource,
+    },
   });
 });
 
-exports.createResource = catchAsync(async (req, res, next) => {
+export const createResource = catchAsync(async (req, res, next) => {
   const newResource = await Resource.create(req.body);
 
   res.status(201).json({
     status: 'success',
     data: {
-      tour: newResource
-    }
+      resource: newResource,
+    },
   });
 });
 
-exports.updateResource = catchAsync(async (req, res, next) => {
+export const updateResource = catchAsync(async (req, res, next) => {
   const resource = await Resource.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   if (!resource) {
@@ -60,12 +59,12 @@ exports.updateResource = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     data: {
-      resource
-    }
+      resource,
+    },
   });
 });
 
-exports.deleteResource = catchAsync(async (req, res, next) => {
+export const deleteResource = catchAsync(async (req, res, next) => {
   const resource = await Resource.findByIdAndDelete(req.params.id);
 
   if (!resource) {
@@ -74,6 +73,6 @@ exports.deleteResource = catchAsync(async (req, res, next) => {
 
   res.status(204).json({
     status: 'success',
-    data: null
+    data: null,
   });
 });
