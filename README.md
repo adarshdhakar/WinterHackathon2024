@@ -9,9 +9,9 @@ Description
   </tr>
 </table> -->
 
-<!-- ## Live Demo
+## Live Demo
 
-Explore the live version of Name: [Name Live]() -->
+Explore the live version of EduPoint: [EduPoint Live](https://www.loom.com/share/06c0747f330e4c758975fecedde1462d?sid=d4430d4e-e382-463e-ac62-770291000fb5)
 
 ## Table of Contents
 
